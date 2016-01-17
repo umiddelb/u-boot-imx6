@@ -1,0 +1,7 @@
+cd u-boot-imx6
+make mx6_cubox-i_config
+make
+sudo cp SPL /boot
+sudo cp u-boot.img /boot
+sudo dd if=SPL of=/dev/mmcblk0 bs=1K seek=1
+sudo dd if=u-boot.img of=/dev/mmcblk0 bs=1K seek=42
